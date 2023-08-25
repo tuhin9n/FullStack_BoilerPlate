@@ -1,2 +1,3 @@
-url-shortener-api/node_modules
-url-shortener/node_modules
+
+server/node_modules/
+client/node_modules/
