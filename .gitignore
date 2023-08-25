@@ -1,3 +1,2 @@
-
-urlShortener/url-shortener-api/node_modules/
-urlShortener/url-shortener/node_modules/
+url-shortener-api/node_modules
+url-shortener/node_modules
