@@ -7,6 +7,7 @@ async function getStudents(page = 1) {
     const rows = await db.query(
         `SELECT * FROM student LIMIT ${offset},${config.listPerPage}`
     );
+    console.log('result from db', rows)
     const data = helper.emptyOrRows(rows);
     const meta = { page };
 
