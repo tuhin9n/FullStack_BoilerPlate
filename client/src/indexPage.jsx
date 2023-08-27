@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
-import './App.css';
-
-
 
 export default function Index() {
     var [studentList, setStudentList] = useState([]);
+    var [isAdminControlsEnabled, setAdminControls] = useState(false);
     useEffect(() => {
         callAPI();
     }, []);
@@ -14,30 +12,35 @@ export default function Index() {
             .then(res => res.json())
             .then(res => setStudentList(res));
     }
+
+    const toggleAdminControls = () => {
+        setAdminControls(!isAdminControlsEnabled);
+    }
+
+    console.log("Hit Index Page", studentList);
     return (
         <React.Fragment>
-            <div>
-                <table id="students">
-                    <tbody>
-                        <tr>
-                            <th>Student Id</th>
-                            <th>Name</th>
-                            <th>Joining Date</th>
-                        </tr>
-                        {
-                            studentList.data && studentList.data.length > 0 && studentList.data.map((eachStudent, i) => {
-                                return (
-                                    <tr key={i}>
-                                        <td>{eachStudent.id}</td>
-                                        <td>{eachStudent.name}</td>
-                                        <td>{new Date(eachStudent.joiningDate).toDateString()}</td>
-                                    </tr>
-                                )
-                            })
-                        }
-                    </tbody>
-                </table>
+            <div className="d-flex rowLnHt pd-10">
+                <div className="btn-common">Add Student</div>
+                <div className="flex-one"></div>
+                <div className="btn-admin" onClick={() => toggleAdminControls()}>{isAdminControlsEnabled ? "Disable " : "Enable "} Admin Actions</div>
             </div>
+            <div id="table-header" className="d-flex table-header">
+                <div className="flex-one txt-center">Student Id</div>
+                <div className="flex-one txt-center">Name</div>
+                <div className="flex-one txt-center">Joining Date</div>
+            </div>
+            {
+                studentList.data && studentList.data.length > 0 && studentList.data.map((eachStudent, i) => {
+                    return (
+                        <div id="eachRow" className="d-flex rowLnHt alternate-rows">
+                            <div className="flex-one txt-center">{eachStudent.id}</div>
+                            <div className="flex-one txt-center">{eachStudent.name}</div>
+                            <div className="flex-one txt-center">{new Date(eachStudent.joiningDate).toDateString()}</div>
+                        </div>
+                    )
+                })
+            }
         </React.Fragment>
     )
 }

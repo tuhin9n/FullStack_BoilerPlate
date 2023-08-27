@@ -1,6 +1,6 @@
-.App {
+/* .App {
   text-align: center;
-}
+} */
 
 .App-logo {
   height: 40vmin;
@@ -37,33 +37,75 @@
   }
 }
 
-#students {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
+.d-flex {
+  display: flex;
 }
 
-#students td > #students th {
-  border: 1px solid #ddd;
-  padding: 8px;
+.flex-one {
+  flex: 1;
 }
 
-#students tr:nth-child(even){background-color: #f2f2f2;}
+.table-header {
+  background: #04AA6D; 
+  color: #ffffff; 
+  line-height: 30px;
+}
 
-#students tr:hover {background-color: #ddd;}
+.rowLnHt {
+  line-height: 30px;
+}
 
-#students th {
-  padding-top: 12px;
-  padding-bottom: 12px;
+.txt-center{
   text-align: center;
-  background-color: #04AA6D;
-  color: white;
 }
 
-#header {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: center;
-  background-color: #bebebe;
-  color: rgb(51, 51, 51);
+.alternate-rows:nth-child(even) {
+  background-color: #ececec;
 }
+
+.alternate-rows:nth-child(odd) {
+  background-color:#dfdfdf;
+}
+
+.alternate-rows:hover {
+  background-color:#d6d6d6;
+}
+
+.btn-common {
+  background: #04AA6D;
+  border: 1px solid #038d5a;
+  color: #ffffff;
+  padding: 0px 3px;
+  margin-right: 5px;
+  width: fit-content;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-common:hover {
+  background: #048f5c;
+}
+
+.btn-admin {
+  background: #aa0404;
+  border: 1px solid #8d0303;
+  color: #ffffff;
+  padding: 0px 3px;
+  margin-right: 5px;
+  width: fit-content;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-admin:hover {
+  background: #8f0404;
+}
+
+
+
+.pd-10 {
+  padding: 10px;
+}
+
